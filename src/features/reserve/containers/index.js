@@ -1,3 +1,3 @@
-import ReserveListContainer from './ReserveListContainer';
+import ReserveContainer from './ReserveContainer';
 
-export {ReserveListContainer};
+export {ReserveContainer};

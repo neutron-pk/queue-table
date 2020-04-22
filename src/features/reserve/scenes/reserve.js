@@ -1,6 +1,6 @@
 import React from 'react';
-import {ReserveListContainer} from '../containers';
+import {ReserveContainer} from '../containers';
 
-const ReserveScene = () => <ReserveListContainer />;
+const ReserveScene = () => <ReserveContainer />;
 
 export default ReserveScene;
