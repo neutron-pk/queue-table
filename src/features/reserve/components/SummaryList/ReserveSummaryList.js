@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {FlatList, Text, View, StyleSheet} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
 
 SummaryReserveList.propTypes = {
   data: PropTypes.array,
@@ -16,7 +15,7 @@ function SummaryReserveList(props) {
     <FlatList
       data={props.data}
       renderItem={ReserveItem}
-      keyExtractor={item => item.id}
+      keyExtractor={item => item.date}
       style={styles.container}
       extraData={props.data}
     />
