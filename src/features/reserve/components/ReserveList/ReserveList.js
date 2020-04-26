@@ -36,6 +36,7 @@ function ReserveItem({item}) {
           <Text style={styles.contentText}>{`Phone: ${item.phoneNumber}`}</Text>
         </View>
       </View>
+      <View style={styles.line} />
       <Text style={styles.descriptionText}>{`Date: ${item.date}`}</Text>
       <Text style={styles.descriptionText}>
         {`Time: ${item.timeIn} - ${item.timeOut}`}
@@ -108,6 +109,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 8,
+  },
+  line: {
+    height: 1,
+    backgroundColor: '#999999',
+    marginVertical: 8,
   },
 });
 
