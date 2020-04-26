@@ -1,18 +1,17 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
-import {ReserveScene} from './features/reserve';
+import {Provider} from 'react-redux';
 
-const Stack = createStackNavigator();
+import initStore from './store';
+import Router from './router';
+
+const store = initStore();
 
 function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={ReserveScene} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+      <Router />
+    </Provider>
   );
 }
 

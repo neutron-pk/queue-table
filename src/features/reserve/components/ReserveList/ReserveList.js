@@ -27,7 +27,7 @@ function ReserveItem({item}) {
   return (
     <View style={styles.itemContainer}>
       <Text>{`Customer: ${item.name}`}</Text>
-      <Text>{`Phone Number: ${item.name}`}</Text>
+      <Text>{`Phone Number: ${item.phoneNumber}`}</Text>
       <View style={styles.itemGroup}>
         <Text>{`Date: ${item.date}`}</Text>
         <Text>{`Period: ${item.timeIn} - ${item.timeOut}`}</Text>
@@ -43,7 +43,7 @@ function ReserveItem({item}) {
 function ReserveListEmpty() {
   return (
     <View style={styles.itemEmpty}>
-      <Text>No reserve</Text>
+      <Text>No queue reserve</Text>
     </View>
   );
 }
@@ -51,11 +51,11 @@ function ReserveListEmpty() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding: 16,
   },
   itemContainer: {
     flex: 1,
     minHeight: 80,
-    padding: 8,
     backgroundColor: '#fafafa',
     marginHorizontal: 16,
     marginVertical: 8,
@@ -71,7 +71,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     height: 120,
-    padding: 8,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#999999',
+    borderStyle: 'dashed',
   },
 });
 

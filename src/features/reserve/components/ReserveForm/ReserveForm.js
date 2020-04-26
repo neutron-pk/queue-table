@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Button, Text, View, StyleSheet} from 'react-native';
+import {TouchableOpacity, View, Text, StyleSheet} from 'react-native';
 import {Formik} from 'formik';
 
 import {TextField, DatePickerField} from '../../../../components';
@@ -14,7 +14,7 @@ ReserveForm.defaultProps = {
   onSubmit() {},
 };
 
-function ReserveForm(props) {
+function ReserveForm({onSubmit}) {
   const initialValues = {
     name: '',
     phoneNumber: '',
@@ -26,13 +26,10 @@ function ReserveForm(props) {
   return (
     <Formik
       initialValues={initialValues}
-      onSubmit={onHandleSubmit}
+      onSubmit={onSubmit}
       validationSchema={schema}>
       {({handleChange, handleBlur, handleSubmit, values, errors, touched}) => (
         <View style={styles.container}>
-          <View style={styles.header}>
-            <Text>Add Queue</Text>
-          </View>
           <TextField
             label="Customer Name"
             onChangeText={handleChange('name')}
@@ -77,7 +74,7 @@ function ReserveForm(props) {
             mode="time"
           />
           <TextField
-            label="No. Customer"
+            label="Number of Customer"
             onChangeText={handleChange('numberOfCustomer')}
             onBlur={handleBlur('numberOfCustomer')}
             value={values.numberOfCustomer}
@@ -85,35 +82,40 @@ function ReserveForm(props) {
             touched={touched.numberOfCustomer}
             keyboardType="number-pad"
           />
-          <Button onPress={handleSubmit} title="Submit" />
+          <View style={styles.footer}>
+            <TouchableOpacity onPress={handleSubmit} style={styles.button}>
+              <Text style={styles.buttonText}>SUBMIT</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       )}
     </Formik>
   );
-
-  function onHandleSubmit(values) {
-    const newFormateValues = {
-      ...values,
-      id: `${Date.now()}`,
-      numberOfTable:
-        values.numberOfCustomer % 4 <= 1 ? 1 : values.numberOfCustomer % 4,
-    };
-    return props.onSubmit(newFormateValues);
-  }
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#f9f9f9',
     padding: 16,
-    margin: 8,
+    margin: 16,
+    backgroundColor: '#ffffff',
+    borderRadius: 8,
     borderWidth: 1,
-    borderColor: '#666666',
+    borderColor: '#999999',
   },
-  header: {
-    height: 32,
-    justifyContent: 'center',
-    marginBottom: 16,
+  footer: {
+    alignItems: 'center',
+  },
+  button: {
+    width: 100,
+    padding: 8,
+    borderRadius: 8,
+    backgroundColor: '#007aff',
+  },
+  buttonText: {
+    fontSize: 16,
+    lineHeight: 20,
+    textAlign: 'center',
+    color: '#ffffff',
   },
 });
 

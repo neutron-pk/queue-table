@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   label: {
     width: 100,
     marginRight: 8,
-    marginTop: 12,
+    marginTop: 4,
   },
   inputWrapper: {
     flex: 1,

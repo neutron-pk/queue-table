@@ -1,52 +1,55 @@
-import React, {useState} from 'react';
-import {
-  Button,
-  Modal,
-  StyleSheet,
-  TouchableWithoutFeedback,
-  View,
-} from 'react-native';
-import {ReserveForm, ReserveList} from '../components';
+import React from 'react';
+import PropTypes from 'prop-types';
+import {StyleSheet, TouchableWithoutFeedback, View} from 'react-native';
+import {connect} from 'react-redux';
+import {useNavigation} from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
-function ReserveContainer() {
-  const [data, setData] = useState([]);
-  const [showModal, setShowModal] = useState(false);
+import {ReserveList} from '../components';
+
+ReserveContainer.propTypes = {
+  list: PropTypes.array,
+};
+
+ReserveContainer.defaultProps = {
+  list: [],
+};
+
+function ReserveContainer({list}) {
+  const navigation = useNavigation();
   return (
     <>
-      <ReserveList data={data} />
+      <ReserveList data={list} />
       <View style={styles.footer}>
-        <Button title="Add queqe" onPress={() => setShowModal(true)} />
-      </View>
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={showModal}
-        onRequestClose={() => setShowModal(false)}>
-        <TouchableWithoutFeedback>
-          <View style={styles.modal}>
-            <ReserveForm onSubmit={onSubmitForm} />
+        <TouchableWithoutFeedback
+          onPress={() => navigation.navigate('Add Reverve')}>
+          <View style={styles.iconButton}>
+            <Icon name="plus-circle" size={48} color="#ffffff" />
           </View>
         </TouchableWithoutFeedback>
-      </Modal>
+      </View>
     </>
   );
-
-  function onSubmitForm(value) {
-    setData(prevState => [...prevState, value]);
-    setShowModal(false);
-  }
 }
 
-const styles = StyleSheet.create({
-  modal: {
-    flex: 1,
-    justifyContent: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.2)',
-  },
-  footer: {
-    height: 64,
-    backgroundColor: '#ffffff',
-  },
+const mapStateToProps = state => ({
+  list: state.reserve.data,
 });
 
-export default ReserveContainer;
+export default connect(mapStateToProps)(ReserveContainer);
+
+const styles = StyleSheet.create({
+  footer: {
+    position: 'absolute',
+    bottom: 48,
+    right: 16,
+  },
+  iconButton: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    backgroundColor: '#007aff',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});

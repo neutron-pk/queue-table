@@ -1,3 +1,4 @@
-import {ReserveScene} from './scenes';
+import {ReserveScene, AddReserveScene} from './scenes';
+import {ReserveReducer} from './redux';
 
-export {ReserveScene};
+export {ReserveScene, AddReserveScene, ReserveReducer};
