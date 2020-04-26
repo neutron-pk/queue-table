@@ -64,10 +64,8 @@ function DatePickerField(props) {
               </View>
               <DateTimePicker
                 testID="dateTimePicker"
-                timeZoneOffsetInMinutes={0}
                 value={date}
                 mode={mode}
-                is24Hour={true}
                 display="spinner"
                 onChange={onChangeDatePicker}
               />
@@ -126,7 +124,6 @@ const styles = StyleSheet.create({
   },
   modal: {
     flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.2)',
   },
   datePicker: {
     position: 'absolute',
