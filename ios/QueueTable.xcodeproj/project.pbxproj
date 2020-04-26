@@ -52,6 +52,7 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = QueueTable/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = QueueTable/main.m; sourceTree = "<group>"; };
 		15499005E7BBF5627B73BEE9 /* libPods-QueueTable-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QueueTable-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AD187112455CA06004FEE64 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* QueueTable-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QueueTable-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* QueueTable-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "QueueTable-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35ABE381FBF03D038A1484DA /* libPods-QueueTable-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QueueTable-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +126,7 @@
 		13B07FAE1A68108700A75B9A /* QueueTable */ = {
 			isa = PBXGroup;
 			children = (
+				1AD187102455C993004FEE64 /* Fonts */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -134,6 +136,14 @@
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = QueueTable;
+			sourceTree = "<group>";
+		};
+		1AD187102455C993004FEE64 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1AD187112455CA06004FEE64 /* FontAwesome.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -194,7 +204,6 @@
 				4C8F8CA4843C929D68FB2B29 /* Pods-QueueTable-tvOSTests.debug.xcconfig */,
 				74F790E6C436C401219D0C05 /* Pods-QueueTable-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
