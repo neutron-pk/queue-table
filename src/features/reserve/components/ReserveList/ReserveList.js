@@ -43,6 +43,9 @@ function ReserveItem({item}) {
       <Text style={styles.descriptionText}>
         {`Number of Customer: ${item.numberOfCustomer}`}
       </Text>
+      <Text style={styles.descriptionText}>
+        {`Number of Table: ${item.numberOfTable}`}
+      </Text>
     </View>
   );
 }
@@ -58,13 +61,14 @@ function ReserveListEmpty() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingVertical: 8,
+    paddingHorizontal: 16,
   },
   itemContainer: {
     flex: 1,
     padding: 16,
     minHeight: 80,
     backgroundColor: '#fafafa',
-    marginHorizontal: 16,
     marginVertical: 8,
     borderRadius: 12,
     borderColor: '#999999',

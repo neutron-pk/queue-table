@@ -27,8 +27,7 @@ function AddReserveContainer({onAddReserve}) {
     const newFormateValues = {
       ...data,
       id: `${Date.now()}`,
-      numberOfTable:
-        data.numberOfCustomer % 4 <= 1 ? 1 : data.numberOfCustomer % 4,
+      numberOfTable: Math.ceil(data.numberOfCustomer / 4),
     };
     onAddReserve(newFormateValues);
     navigation.goBack();
