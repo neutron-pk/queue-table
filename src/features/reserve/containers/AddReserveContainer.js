@@ -39,7 +39,10 @@ const mapStateToProps = state => state;
 
 const mapDispatchToProps = {onAddReserve: addReserve};
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddReserveContainer);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(AddReserveContainer);
 
 const styles = StyleSheet.create({
   form: {
